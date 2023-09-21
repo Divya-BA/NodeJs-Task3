@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "726fd29b-ac64-4b30-9727-de188f756738",
+		"name": "Task-3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29697038"
+	},
+	"item": [
+		{
+			"name": "Mentor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sumathi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/mentor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"mentor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"umayal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"students\":[\"650c59a195436040196721da\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/mentor/650c599095436040196721d8/assign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"mentor",
+						"650c599095436040196721d8",
+						"assign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign and change",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/student/650c59a195436040196721da/assignMentor/650b0c3f86cad679426951df",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"student",
+						"650c59a195436040196721da",
+						"assignMentor",
+						"650b0c3f86cad679426951df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PreviseMentor for particular student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/student/650c59a195436040196721da/pMentor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"student",
+						"650c59a195436040196721da",
+						"pMentor"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
