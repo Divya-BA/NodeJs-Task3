@@ -86,22 +86,19 @@ app.post("/mentor/:mentorId/assign", async (req, res) => {
     }
   });
 
-app.get("/student/:studentId/previousMentor", async (req, res) => {
-    try {
-      const student = await Student.findById(req.params.studentId);
-      if (!student) {
-        return res.status(404).send("Student not found");
-      }
-  
-      const previousMentors = await Mentor.find({
-        _id: { $in: student.pMentor },
-      });
-  
-      res.send(previousMentors);
-    } catch (error) {
-      res.status(400).send(error);
+app.get("/student/:studentId/pMentor", async (req, res) => {
+  try {
+    const student = await Student.findById(req.params.studentId).populate("pMentor");
+    if (!student.pMentor) {
+      return res.status(404).send("Previous mentor is not available for this Student");
     }
-  });
+    else{
+       res.send(student.pMentor)
+    }
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
   
   
 
